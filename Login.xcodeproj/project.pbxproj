@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		151C80397E3FD5BE45E177B7 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B9AF119459DF1A15E1311B /* Pods_Login.framework */; };
+		AC2B5E7A203205E700F9A252 /* UIVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2B5E79203205E700F9A252 /* UIVCExtension.swift */; };
 		AC48E8BE20125C1000B1F4D2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48E8BD20125C1000B1F4D2 /* RoundButton.swift */; };
 		AC48E8C120126FF000B1F4D2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48E8C020126FF000B1F4D2 /* AuthService.swift */; };
 		AC73C91D2016873B00C282A0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73C91C2016873B00C282A0 /* SignUpVC.swift */; };
@@ -27,6 +28,7 @@
 		02B9AF119459DF1A15E1311B /* Pods_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E535DFBC5D0F1E0DFDA5E7A /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
 		98BB229351E8BF4F0BAFBE13 /* Pods-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.debug.xcconfig"; sourceTree = "<group>"; };
+		AC2B5E79203205E700F9A252 /* UIVCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVCExtension.swift; sourceTree = "<group>"; };
 		AC48E8BD20125C1000B1F4D2 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		AC48E8C020126FF000B1F4D2 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AC73C91C2016873B00C282A0 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC2B5E78203202E700F9A252 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC2B5E79203205E700F9A252 /* UIVCExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		AC48E8BF20126F9300B1F4D2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 				AC7CBB1C201120E10031C119 /* View */,
 				AC7CBB1B201120D90031C119 /* Controller */,
 				AC48E8BF20126F9300B1F4D2 /* Services */,
+				AC2B5E78203202E700F9A252 /* Extensions */,
 				ACF574A9201906FA00F76478 /* Util */,
 				AC7CBB07201118EF0031C119 /* AppDelegate.swift */,
 				AC7CBB0B201118EF0031C119 /* Main.storyboard */,
@@ -300,6 +311,7 @@
 			files = (
 				AC48E8BE20125C1000B1F4D2 /* RoundButton.swift in Sources */,
 				AC7CBB0A201118EF0031C119 /* LoginVC.swift in Sources */,
+				AC2B5E7A203205E700F9A252 /* UIVCExtension.swift in Sources */,
 				AC48E8C120126FF000B1F4D2 /* AuthService.swift in Sources */,
 				AC7CBB1F20112CD60031C119 /* RoundTextField.swift in Sources */,
 				ACF574AB2019073700F76478 /* Constants.swift in Sources */,

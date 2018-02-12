@@ -24,33 +24,37 @@ class SignUpVC: UIViewController {
 
     @IBAction func signUpBtnPressed(_ sender: RoundButton) {
         guard let name = nameTxtField.text, name.characters.count > 0 else {
-            self.notifyUser(title: "Name is Required!", message: "You must enter name.")
+            showAlert(title: "Name is Required!", message: "You must enter name.")
+            
             return
         }
         
         guard let email = emailTxtField.text, email.characters.count > 0 else {
-            self.notifyUser(title: "Email is Required!", message: "You must enter email.")
+            showAlert(title: "Email is Required!", message: "You must enter email.")
+
             return
         }
         
         guard let password = pwdTxtField.text, password.characters.count > 0 else {
-            self.notifyUser(title: "Password is Required!", message: "You must enter password.")
+            showAlert(title: "Password is Required!", message: "You must enter password.")
+
             return
         }
         
         guard let rePassword = rePwdTxtField.text, (rePassword.characters.count > 0 && rePassword == password) else {
-            self.notifyUser(title: "Re-Enter Password is Required!",
-                            message: "You must enter the same password in re-enter password field.")
+            showAlert(title: "Re-Enter Password is Required!", message: "You must enter the same password in re-enter password field.")
+
             return
         }
         
         AuthService.instance.signUp(name: name, email: email, password: password, onComplete: { (errMsg, data) in
             guard errMsg == nil else {
-                self.notifyUser(title: "Error Authentication", message: errMsg!)
+                self.showAlert(title: "Error Authentication", message: errMsg!)
+
                 return
             }
-            // perform segue to destination VC
-            self.completeLogin(id: "\(86)")
+
+            self.completeLogin(id: "\(data!)")
         })
         
     }
@@ -62,22 +66,11 @@ class SignUpVC: UIViewController {
     // MARK: - Helper Functions
     
     func completeLogin(id: String) {
-        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
-        
-        
-        print("keychainResult: \(keychainResult)")
-        print("id:\(id)")
-        // perform segue to destination VC
+        let _ = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+
         performSegue(withIdentifier: "showNewsFeedVC", sender: nil)
     }
     
-    func notifyUser(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
 }
 
-// refactor alert
 

@@ -24,8 +24,8 @@ class AuthService {
             if error != nil {
                 self.handelFirebaseError(err: error!, onComplete: onComplete)
             } else {
-                onComplete?(nil, user)
-                print("user: \(user)")
+                //print("uid using currentUser: \(Auth.auth().currentUser?.uid)")
+                onComplete?(nil, user!.uid as AnyObject?)
             }
         }
     }
@@ -38,11 +38,8 @@ class AuthService {
                 if user?.uid != nil {
                     let userData = ["name": name, "email": email]
                     
-                    print("user: \(user)")
-                    print("userData: \(userData)")
-                    onComplete?(nil, user) // might not need it here
+                    onComplete?(nil, user!.uid as AnyObject?) // might not need it here
                     DataService.instance.updateFirebaseUser(uid: user!.uid, userData: userData)
-                    self.login(email: email, password: password, onComplete: onComplete)
                 }
             }
         }
